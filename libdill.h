@@ -267,5 +267,18 @@ DILL_EXPORT int chdone(int ch);
 DILL_EXPORT int choose(struct chclause *clauses, int nclauses,
     int64_t deadline);
 
+
+
+struct coro_ring;
+DILL_EXPORT struct coro_ring *ring_new(size_t size, int (*dtor_func)(int));
+DILL_EXPORT void ring_delete(struct coro_ring **ring);
+DILL_EXPORT int ring_full(const struct coro_ring *ring);
+DILL_EXPORT int ring_empty(const struct coro_ring *ring);
+DILL_EXPORT size_t ring_size(const struct coro_ring *ring);
+DILL_EXPORT size_t ring_capacity(const struct coro_ring *ring);
+DILL_EXPORT int ring_tail(const struct coro_ring *ring);
+DILL_EXPORT int *ring_tail_p(const struct coro_ring *ring);
+DILL_EXPORT int ring_pop(struct coro_ring *ring);
+DILL_EXPORT int ring_push(struct coro_ring *ring, int new_handle);
 #endif
 

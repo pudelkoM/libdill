@@ -41,6 +41,7 @@ tests/handle
 tests/threads
 tests/threads2
 tests/rbtree
+tests/ring
 perf/.dirstamp
 perf/chan
 perf/ctxswitch

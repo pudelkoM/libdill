@@ -57,7 +57,8 @@ libdill_la_SOURCES = \
     stack.c \
     ctx.h \
     ctx.c \
-    utils.h
+    utils.h \
+    ring.c
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = libdill.pc
@@ -87,7 +88,8 @@ check_PROGRAMS = \
     tests/sleep \
     tests/signals \
     tests/overload \
-    tests/rbtree
+    tests/rbtree \
+    tests/ring
 
 if DILL_THREADS
 check_PROGRAMS += \
